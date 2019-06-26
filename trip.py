@@ -1,4 +1,4 @@
-# Contains code for Trip object
+# Contains code for Trip object.
 
 import datetime, event
 
@@ -16,8 +16,7 @@ class Trip:
             attendees.append(input("Attendee name: "))
             if input("Add another attendee? ") == "yes":
                 continue
-            else:
-                break
+            break
         return attendees
 
     def add_date_range():
@@ -32,8 +31,7 @@ class Trip:
             events.append(event.Event.from_input())
             if input("\nAdd another event? ") == "yes":
                 continue
-            else:
-                break
+            break
         return events
 
     @classmethod

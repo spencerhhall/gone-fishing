@@ -1,5 +1,6 @@
 # Displays all files in the 'trips' directory (if they exist) and allows the user
-# to read a file, which is printed to the console.
+# to read or delete a chosen file.
+
 import os
 from os import listdir
 from os.path import isfile, join
@@ -16,24 +17,20 @@ def v_d_trips(view):
             n += 1
             print("(" + str(n) + ") " + trips)
 
+        choice = input("Would you like to choose a file? ").lower() == "yes"
+        while choice:
+            index = int(input("Please choose a valid index: "))
 
-        readOption = input("Would you like to choose a file? ").lower() == "yes"
-        while readOption:
-            choice = int(input("Please choose a valid index: "))
-            if choice < 1:
-                print("Index is too low.")
-                continue
-            elif choice > len(tripFiles):
-                print("Index is too high.")
+            if index < 1 or index > len(tripFiles):
+                print("Index is invalid.")
                 continue
             else:
                 if view:
-                    f = open("trips/" + tripFiles[choice - 1], "r")
+                    f = open("trips/" + tripFiles[index - 1], "r")
                     print("\n" + f.read())
                     f.close()
-                    break
                 else:
-                    os.remove("trips/" + tripFiles[choice - 1])
-                    break
+                    os.remove("trips/" + tripFiles[index - 1])
+                break
 
         print()

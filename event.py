@@ -1,4 +1,4 @@
-# Contains code for Event object
+# Contains code for Event object.
 
 import datetime
 
@@ -35,9 +35,8 @@ class Event:
                 if num < 0:
                     print("Numer is too low.")
                     continue
-                else:
-                    speciesCount[species][0] = num
-                    break
+                speciesCount[species][0] = num
+                break
 
             if speciesCount[species][0] != 0:
                 while True:
@@ -50,9 +49,8 @@ class Event:
                     if num <= 0:
                         print("Numer is too low.")
                         continue
-                    else:
-                        speciesCount[species][1] = num
-                        break
+                    speciesCount[species][1] = num
+                    break
 
         return speciesCount
 

@@ -21,4 +21,6 @@ def create_trip():
     f.write("\nEvents:")
     for event in newTrip.events:
         f.write("\n" + event.location)
+        
+
     f.close()
