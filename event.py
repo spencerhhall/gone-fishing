@@ -32,7 +32,7 @@ class Event:
     @classmethod
     def from_input(cls):
         return cls(
-            input("Event location: "),
+            input("\nNEW EVENT\nLocation: "),
             cls.add_date(),
             cls.add_fish(),
             input("Event notes: "),

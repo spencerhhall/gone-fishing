@@ -2,7 +2,11 @@
 
 from os import listdir
 from os.path import isfile, join
-onlyfiles = [f for f in listdir("trips/") if isfile(join("trips/", f))]
+onlyFiles = [f for f in listdir("trips/") if isfile(join("trips/", f))]
 
 def view_trips():
-	print(onlyfiles)
+	if len(onlyFiles) == 0:
+		print("Sorry, there are no logged trips.")
+	else:
+		for trips in onlyFiles:
+			print(trips)
