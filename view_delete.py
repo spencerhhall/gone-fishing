@@ -1,6 +1,5 @@
 # Displays all files in the 'trips' directory (if they exist) and allows the user
 # to read or delete a chosen file.
-
 import os
 from os import listdir
 from os.path import isfile, join

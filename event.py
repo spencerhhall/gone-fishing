@@ -1,5 +1,4 @@
 # Contains code for Event object.
-
 import datetime
 
 speciesCount = { # Number of trout and average size
@@ -41,7 +40,7 @@ class Event:
             if speciesCount[species][0] != 0:
                 while True:
                     try:
-                        num = float(input("What was the average size? "))
+                        num = float(input("What was the average size (inches)? "))
                     except ValueError:
                         print("Input a valid number.")
                         continue

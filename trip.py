@@ -1,5 +1,4 @@
 # Contains code for Trip object.
-
 import datetime, event
 
 class Trip:
