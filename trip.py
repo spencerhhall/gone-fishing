@@ -14,7 +14,7 @@ class Trip:
         attendees = []
         while True:
             attendees.append(input("Attendee name: "))
-            if input("Continue: ") == "yes":
+            if input("Add another attendee? ") == "yes":
                 continue
             else:
                 break
@@ -30,7 +30,7 @@ class Trip:
         events = []
         while True:
             events.append(event.Event.from_input())
-            if input("Continue: ") == "yes":
+            if input("\nAdd another event? ") == "yes":
                 continue
             else:
                 break
@@ -45,11 +45,3 @@ class Trip:
             cls.add_date_range(),
             cls.add_events()
         )
-
-    def print_self(self):
-        print("TRIP PROPERTIES")
-        print(self.name)
-        print(self.desc)
-        print(self.attendees)
-        print(self.dateRange)
-        print(self.events)

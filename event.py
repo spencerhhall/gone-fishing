@@ -5,10 +5,11 @@ import datetime
 speciesCount = { # Number of trout and average size
 	"rainbow trout": [0, 0],
 	"brown trout": [0, 0],
+    "brook trout": [0, 0],
 	"cutthroat trout": [0, 0],
-	"brook trout": [0, 0],
-	"Arctic grayling": [0, 0],
-	"bull trout": [0, 0]
+    "golden trout": [0, 0],
+    "bull trout": [0, 0],
+	"Arctic grayling": [0, 0]
 }
 
 class Event:
@@ -24,9 +25,34 @@ class Event:
 
     def add_fish():
     	for species in speciesCount:
-    		speciesCount[species][0] = int(input("How many " + species + " did you catch? "))
+            while True:
+                try:
+                    num = int(input("How many " + species + " did you catch? "))
+                except ValueError:
+                    print("Input a valid number.")
+                    continue
+
+                if num < 0:
+                    continue
+                else:
+                    speciesCount[species][0] = num
+                    break
+
+    		
     		if(speciesCount[species][0]) != 0:
-    			speciesCount[species][1] = int(input("What was the average size? "))
+                while True:
+                    try:
+                        num = float(input("What was the average size? "))
+                    except ValueError:
+                        print("Input a valid number.")
+                        continue
+
+                    if num < 0:
+                        continue
+                    else:
+                        speciesCount[species][1] = num
+                        break
+                        
     	return speciesCount
 
     @classmethod
@@ -37,10 +63,3 @@ class Event:
             cls.add_fish(),
             input("Event notes: "),
         )
-
-    def print_self(self):
-        print("EVENT PROPERTIES")
-        print(self.location)
-        print(self.date)
-        print(self.fish)
-        print(self.notes)
