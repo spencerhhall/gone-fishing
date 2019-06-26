@@ -12,7 +12,7 @@ def create_trip():
 	for attendee in newTrip.attendees:
 		f.write(attendee + "\n")
 	f.write(newTrip.dateRange[0].strftime('%m/%d/%Y') + " - " + newTrip.dateRange[1].strftime('%m/%d/%Y') + "\n")
-	f.write("\n" + "Events:")
+	f.write("\nEvents:\n")
 	for event in newTrip.events:
 		f.write(event.location + "\n")
 	f.close()
